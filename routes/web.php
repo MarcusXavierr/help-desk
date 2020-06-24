@@ -17,6 +17,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
+//Home route
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Calls Route
+
+// Route::get('/call','CallController@index')->name('call.index');
+// Route::post('/call','CallController@store')->name('call.store');
+// Route::get('/call/create','CallController@create')->name('call.create');
+
+Route::resources([
+    'call' => 'CallController'
+]);
+
+
+
