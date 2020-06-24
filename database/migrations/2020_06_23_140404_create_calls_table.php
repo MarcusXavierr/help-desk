@@ -15,7 +15,8 @@ class CreateCallsTable extends Migration
     {
         Schema::create('calls', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id');
+            $table->string('user_name');
             //call
             $table->string('title');
             $table->string('category');
